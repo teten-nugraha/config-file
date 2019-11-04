@@ -1,28 +1,17 @@
-spring:
-  application:
-    name: user-services
-  datasource:
-    url: jdbc:mysql://localhost:3306/db_users?verifyServerCertificate=false&useSSL=false&requireSSL=false
-    username: root
-    password: root
-
-  jpa:
-    generate-ddl: true
-    database-platform: org.hibernate.dialect.MySQL5Dialect
-    hibernate:
-      ddl-auto: update
+zuul:
+  prefix: /api
+  route:
+    user-services:
+      path: /user-services/**
+      service-id: user-services
+    task-services:
+      path: /task-services/**
+      service-id: task-services
 
 server:
-  port: 8082
+  port: 8081
 
 eureka:
   client:
     service-url:
-      default-zone: http://localhost:8761/eureka
-
-#task-services:
-#  ribbon:
-#    eureka:
-#      enabled: false
-#    listOfServers: localhost:8083, localhost:8085
-#    ServerListRefreshInterval: 15000
+      defaultZone: http://localhost:8761/eureka
