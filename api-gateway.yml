@@ -2,10 +2,10 @@ zuul:
   prefix: /api
   route:
     user-services:
-      path: /user-services/**
+      path: /user**
       service-id: user-services
     task-services:
-      path: /task-services/**
+      path: /task**
       service-id: task-services
 
 server:
