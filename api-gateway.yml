@@ -1,12 +1,24 @@
 zuul:
+  ignored-services: '*'
   prefix: /api
-  route:
+  routes:
+
     user-services:
       path: /user/**
       service-id: user-services
+
     task-services:
       path: /task/**
       service-id: task-services
+
+      # By default, all requests to gallery service for example will start with: "/gallery/"
+      # What will be sent to the gallery service is what comes after the path defined,
+      # So, if request is "/gallery/view/1", gallery service will get "/view/1".
+      # In case of auth, we need to pass the "/auth/" in the path to auth service. So, set strip-prefix to false
+      strip-prefix: false
+
+      # Exclude authorization from sensitive headers
+      sensitive-headers: Cookie,Set-Cookie
 
 server:
   port: 8089
@@ -16,9 +28,3 @@ eureka:
     service-url:
       defaultZone: http://localhost:8761/eureka
       
-security:
-  basic:
-    enabled: false
-management:
-  security:
-    enabled: false
