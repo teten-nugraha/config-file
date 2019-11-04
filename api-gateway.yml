@@ -9,7 +9,7 @@ zuul:
       service-id: task-services
 
 server:
-  port: 8081
+  port: 8089
 
 eureka:
   client:
