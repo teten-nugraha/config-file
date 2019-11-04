@@ -7,7 +7,7 @@ spring:
           - http://localhost:9000
 
 zuul:
-  prefix: /api
+  #prefix: /api
   route:
     user-services:
       path: /user-services/**
