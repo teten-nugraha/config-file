@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: email-services
+
+  #MAIL CONFIGURATION
+  mail:
+    host: smtp.mailtrap.io
+    port: 2525
+    username: 0346c6bf67c15c
+    password: 42c9ca13ad065e
+
+server:
+  port: 8100
+
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka
