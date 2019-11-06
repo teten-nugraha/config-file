@@ -10,7 +10,7 @@ zuul:
   #prefix: /api
   route:
     post-services:
-      path: /post/**
+      path: /post-services/**
       service-id: post-services
     
 
