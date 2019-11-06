@@ -9,8 +9,6 @@ spring:
     username: 0346c6bf67c15c
     password: 42c9ca13ad065e
 
-server:
-  port: 8100
 
 eureka:
   client:
