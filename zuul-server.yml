@@ -12,7 +12,7 @@ zuul:
     post-services:
       path: /post-services/**
       service-id: post-services
-  ignoredServices: '*'
+  # ignoredServices: '*'
   host:
     time-to-live: -1
     connect-timeout-millis: 5000
