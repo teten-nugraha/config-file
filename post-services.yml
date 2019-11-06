@@ -38,23 +38,36 @@ ribbon:
 #           thread:
 #             timeoutInMilliseconds: 6000
 
-feign:
-  httpclient:
-    connection-timeout: 5000
-    max-connections-per-route: 5
-  client:
-    config:
-      default:
-        logger-level: BASIC
-  config:
-    book:
-      connect-timeout: 5000
-      read-timeout: 5000
-      logger-level: FULL
-      decode404: false
-  compression:
-    request:
-      enabled: true
-      min-request-size: 2048
-    response:
-      enabled: true
+# feign:
+#   httpclient:
+#     connection-timeout: 5000
+#     max-connections-per-route: 5
+#   client:
+#     config:
+#       default:
+#         logger-level: BASIC
+#   config:
+#     book:
+#       connect-timeout: 5000
+#       read-timeout: 5000
+#       logger-level: FULL
+#       decode404: false
+#   compression:
+#     request:
+#       enabled: true
+#       min-request-size: 2048
+#     response:
+#       enabled: true
+
+feign.hystrix.enabled: true
+hystrix:
+  shareSecurityContext: true
+  command:
+    default:
+      circuitBreaker:
+        sleepWindowInMilliseconds: 100000
+        forceClosed: true
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 600000
