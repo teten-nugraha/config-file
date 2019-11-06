@@ -22,3 +22,8 @@ eureka:
   client:
     service-url:
       default-zone: http://localhost:8761/eureka
+
+ribbon:
+  https:
+    client:
+      enabled: true
