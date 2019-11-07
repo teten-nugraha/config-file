@@ -71,3 +71,10 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 600000
+
+route:
+  email: email-service
+
+email-service:
+  ribbon:
+    DeploymentContextBasedVipAddresses: email-services            
