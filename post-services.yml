@@ -77,4 +77,4 @@ route:
 
 email-service:
   ribbon:
-    DeploymentContextBasedVipAddresses: email-services            
+    DeploymentContextBasedVipAddresses: EMAIL-SERVICES            
