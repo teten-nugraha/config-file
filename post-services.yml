@@ -30,13 +30,13 @@ ribbon:
     client:
       enabled: true
 
-# hystrix:
-#   command:
-#     default:
-#       execution:
-#         isolation:
-#           thread:
-#             timeoutInMilliseconds: 6000
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 6000
 
 # feign:
 #   httpclient:
@@ -59,18 +59,18 @@ ribbon:
 #     response:
 #       enabled: true
 
-feign.hystrix.enabled: true
-hystrix:
-  shareSecurityContext: true
-  command:
-    default:
-      circuitBreaker:
-        sleepWindowInMilliseconds: 100000
-        forceClosed: true
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 600000
+# feign.hystrix.enabled: true
+# hystrix:
+#   shareSecurityContext: true
+#   command:
+#     default:
+#       circuitBreaker:
+#         sleepWindowInMilliseconds: 100000
+#         forceClosed: true
+#       execution:
+#         isolation:
+#           thread:
+#             timeoutInMilliseconds: 600000
 
 route:
   email: email-service
